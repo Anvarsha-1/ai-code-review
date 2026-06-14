@@ -12,7 +12,7 @@ const reviewSchema = new mongoose.Schema({
     },
     language: String,
     codeHash: String,
-    feedBack: {
+    feedback: {
         bugs: Array,
         smells: Array,
         suggestions: Array,

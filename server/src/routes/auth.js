@@ -1,8 +1,8 @@
 const express = require('express')
-const Router = express.Router()
+const router = express.Router()
 const jwt = require('jsonwebtoken')
 const passport = require("../config/passport")
-const authenticate = require('../middleware/authentication')
+const authenticate = require('../middleware/authenticate')
 
 
 //redirect user to github
@@ -19,7 +19,7 @@ router.get('/github/callback',
         const token = jwt.sign(
             {userId:req.user._id},
             process.env.JWT_SECRET,
-            {expressIn: '7d'}
+            {expiresIn: '7d'}
         )
 
         
